@@ -9,12 +9,16 @@
 import Foundation
 
 struct Filter : Destination {
-    let destination: Destination
     let predicate: (Record) -> (Bool)
+    let destination: Destination
 
-    init(destination: Destination, _ predicate: (Record) -> (Bool)) {
-        self.destination = destination
+    init(_ predicate: (Record) -> (Bool), destination: Destination) {
         self.predicate = predicate
+        self.destination = destination
+    }
+
+    init(above minLevel: Level, destination: Destination) {
+        self.init({ $0.level >= minLevel }, destination: destination)
     }
 
     func log(record: Record, value: @noescape () -> (Any)) {
@@ -27,7 +31,7 @@ struct Filter : Destination {
 
 public extension Destination {
     func filtered(_ predicate: (Record) -> (Bool)) -> Destination {
-        return Filter(destination: self, predicate)
+        return Filter(predicate, destination: self)
     }
 
     func filtered(above minLevel: Level) -> Destination {

@@ -19,7 +19,15 @@ class GazooeeTests: XCTestCase {
     }
 
     func testWarnAndErrorLogs() {
-        masterDestination = ConsoleDestination().filtered({_ in true})
+        masterDestination = ConsoleDestination().filtered(above: .warn)
+        log(.debug, "this is debug")
+        log(.info, "this is info")
+        log(.warn, "this is warn")
+        log(.error, "this is error")
+    }
+
+    func testOtherSyntax() {
+        masterDestination = Filter(above: .warn, destination: ConsoleDestination())
         log(.debug, "this is debug")
         log(.info, "this is info")
         log(.warn, "this is warn")
