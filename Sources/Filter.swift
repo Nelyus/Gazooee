@@ -26,7 +26,11 @@ struct Filter : Destination {
 }
 
 public extension Destination {
-    func filter(_ predicate: (Record) -> (Bool)) -> Destination {
+    func filtered(_ predicate: (Record) -> (Bool)) -> Destination {
         return Filter(destination: self, predicate)
+    }
+
+    func filtered(above minLevel: Level) -> Destination {
+        return filtered({ $0.level >= minLevel })
     }
 }

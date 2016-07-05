@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct OneLineFormatter: Formatter {
-    func format(record: Record, value: @noescape () -> (Any)) -> String {
+public struct OneLineFormatter: Formatter {
+    public func format(record: Record, value: @noescape () -> (Any)) -> String {
         return "\(record.level) [\(record.file):\(record.line) - \(record.function)] \(value())"
     }
 }

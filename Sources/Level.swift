@@ -8,6 +8,11 @@
 
 import Foundation
 
-public enum Level: Int {
+public enum Level: Int, Comparable {
     case debug, info, warn, error
+}
+
+
+public func <(lhs: Level, rhs: Level) -> Bool {
+    return lhs.rawValue < rhs.rawValue
 }

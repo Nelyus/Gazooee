@@ -22,7 +22,7 @@ func ??=<T>(rhs: inout T?, lhs: @autoclosure () -> (T)) -> T {
 public func log(_ level: Level, _ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
     var valueCache: Any? = nil
     let valueGetter: @noescape () -> Any = { return valueCache ??= value() }
-    sharedConfig.log(
+    masterDestination.log(
         record: Record(level: level, file: file, line: line, function: function),
         value: valueGetter
     )

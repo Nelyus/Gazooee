@@ -19,10 +19,10 @@ private extension String {
 }
 
 public struct Record {
-    let level: Level
-    let file: String
-    let line: Int
-    let function: String
+    public let level: Level
+    public let file: String
+    public let line: Int
+    public let function: String
 
     public init(level: Level, file: String, line: Int, function: String) {
         self.level = level
