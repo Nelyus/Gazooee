@@ -1,5 +1,6 @@
 import XCTest
 @testable import Gazooee
+@testable import GazooeeConfig
 //import func Gazooee.log
 
 class GazooeeTests: XCTestCase {
