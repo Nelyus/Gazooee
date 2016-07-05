@@ -12,7 +12,7 @@ class GazooeeTests: XCTestCase {
     }
 
     func testNoLog() {
-        masterDestination = ConsoleDestination().filtered({_ in false})
+        masterDestination = Console().filtered({_ in false})
         log(.debug, "this is debug")
         log(.info, "this is info")
         log(.warn, "this is warn")
@@ -20,7 +20,7 @@ class GazooeeTests: XCTestCase {
     }
 
     func testWarnAndErrorLogs() {
-        masterDestination = ConsoleDestination().filtered(above: .warn)
+        masterDestination = Console().filtered(above: .warn)
         log(.debug, "this is debug")
         log(.info, "this is info")
         log(.warn, "this is warn")
@@ -28,7 +28,18 @@ class GazooeeTests: XCTestCase {
     }
 
     func testOtherSyntax() {
-        masterDestination = Filter(above: .warn, destination: ConsoleDestination())
+        masterDestination = Filter(above: .warn, destination: Console())
+        log(.debug, "this is debug")
+        log(.info, "this is info")
+        log(.warn, "this is warn")
+        log(.error, "this is error")
+    }
+
+    func testMultiSyntax() {
+        masterDestination = Multi([
+            Filter({ $0.level <= .warn }, destination: Console()),
+            Filter({ $0.level >= .warn }, destination: ConsoleNSLog()),
+        ])
         log(.debug, "this is debug")
         log(.info, "this is info")
         log(.warn, "this is warn")

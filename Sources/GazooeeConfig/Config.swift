@@ -8,4 +8,4 @@
 
 import Foundation
 
-public var masterDestination: Destination = ConsoleDestination()
+public var masterDestination: Destination = Console()

@@ -1,5 +1,5 @@
 //
-//  MultiDestination.swift
+//  Multi.swift
 //  Gazooee
 //
 //  Created by Pierre on 05/07/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MultiDestination: Destination {
+public struct Multi: Destination {
     let destinations: [Destination]
 
     public init(_ destinations: [Destination]) {

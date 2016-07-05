@@ -1,5 +1,5 @@
 //
-//  NSLogDestination.swift
+//  ConsoleNSLog.swift
 //  Gazooee
 //
 //  Created by Pierre on 05/07/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct NSLogDestination: Destination {
+public struct ConsoleNSLog: Destination {
     let formatter: Formatter
 
     public init(formatter: Formatter = OneLineFormatter()) {

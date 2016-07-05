@@ -1,5 +1,5 @@
 //
-//  ConsoleDestination.swift
+//  Console.swift
 //  Gazooee
 //
 //  Created by Pierre on 05/07/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ConsoleDestination: Destination {
+public struct Console: Destination {
     let formatter: Formatter
 
     public init(formatter: Formatter = OneLineFormatter()) {
