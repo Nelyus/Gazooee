@@ -19,6 +19,15 @@ class GazooeeTests: XCTestCase {
         log(.error, "this is error")
     }
 
+    // probably not on linux
+    func testConsoleNSLog() {
+        masterDestination = ConsoleNSLog()
+        log(.debug, "this is debug")
+        log(.info, "this is info")
+        log(.warn, "this is warn")
+        log(.error, "this is error")
+    }
+
     func testNoFilter() {
         masterDestination = defaultConsole
         log(.debug, "this is debug")
@@ -47,24 +56,38 @@ class GazooeeTests: XCTestCase {
     }
 
     func testMulti() {
+        let secondConsole = MockConsole()
+        masterDestination = Multi([defaultConsole, secondConsole])
+        log(.debug, "this is debug")
+        log(.info, "this is info")
+        log(.warn, "this is warn")
+        log(.error, "this is error")
+        XCTAssertEqual(4, defaultConsole.records.count)
+        XCTAssertEqual(4, secondConsole.records.count)
+    }
+
+    func testMultiAlso() {
         let errorConsole = MockConsole()
         masterDestination = Multi([
-            Filter({ $0.level <= .warn }, destination: defaultConsole),
-            Filter({ $0.level >= .warn }, destination: errorConsole),
+            defaultConsole,
+            Filter(above: .warn, destination: errorConsole),
         ])
         log(.debug, "this is debug")
         log(.info, "this is info")
         log(.warn, "this is warn")
         log(.error, "this is error")
-        XCTAssertEqual(3, defaultConsole.records.count)
+        XCTAssertEqual(4, defaultConsole.records.count)
         XCTAssertEqual(2, errorConsole.records.count)
     }
 
     static var allTests : [(String, (GazooeeTests) -> () throws -> Void)] {
         return [
             ("testDefaultLogs", testDefaultLogs),
+            ("testNoFilter", testNoFilter),
             ("testNoLog", testNoLog),
             ("testWarnAndErrorLogs", testWarnAndErrorLogs),
+            ("testMulti", testMulti),
+            ("testMultiAlso", testMultiAlso),
         ]
     }
 }
