@@ -9,7 +9,13 @@
 import Foundation
 
 public struct ConsoleDestination: Destination {
+    let formatter: Formatter
+
+    public init(formatter: Formatter = OneLineFormatter()) {
+        self.formatter = formatter
+    }
+
     public func log(record: Record, value: @noescape () -> (Any)) {
-        print("\(record.level) [\(record.file):\(record.line) - \(record.function)] \(value())")
+        print(formatter.format(record: record, value: value))
     }
 }
