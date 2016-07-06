@@ -9,5 +9,9 @@
 import Foundation
 
 public protocol Formatter {
+    #if swift(>=3.0)
     func format(record: Record, value: @noescape () -> (Any)) -> String
+    #else
+    func format(record _: Record, @noescape value: () -> (Any)) -> String
+    #endif
 }

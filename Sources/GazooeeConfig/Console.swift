@@ -15,7 +15,13 @@ public struct Console: Destination {
         self.formatter = formatter
     }
 
+    #if swift(>=3.0)
     public func log(record: Record, value: @noescape () -> (Any)) {
         print(formatter.format(record: record, value: value))
     }
+    #else
+    public func log(record record: Record, @noescape value: () -> (Any)) {
+        print(formatter.format(record: record, value: value))
+    }
+    #endif
 }

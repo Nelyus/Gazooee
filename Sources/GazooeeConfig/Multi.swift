@@ -15,9 +15,17 @@ public struct Multi: Destination {
         self.destinations = destinations
     }
 
+    #if swift(>=3.0)
     public func log(record: Record, value: @noescape () -> (Any)) {
         for aDestination in destinations {
             aDestination.log(record: record, value: value)
         }
     }
+    #else
+    public func log(record record: Record, @noescape value: () -> (Any)) {
+        for aDestination in destinations {
+            aDestination.log(record: record, value: value)
+        }
+    }
+    #endif
 }
