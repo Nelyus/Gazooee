@@ -1,0 +1,3 @@
+IPHONEOS_DEPLOYMENT_TARGET = 8.0
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
+CODE_SIGN_IDENTITY[sdk=macosx*] = Mac Developer
