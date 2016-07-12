@@ -1,3 +1,4 @@
 IPHONEOS_DEPLOYMENT_TARGET = 8.0
+SDKROOT = iphoneos // makes code-signing config easier
+CODE_SIGN_IDENTITY =
 CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
-CODE_SIGN_IDENTITY[sdk=macosx*] = Mac Developer
