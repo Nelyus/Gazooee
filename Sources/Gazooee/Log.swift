@@ -72,4 +72,22 @@ public struct Logger {
         )
     }
     #endif
+
+    #if swift(>=3.0)
+    public func debug(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+        var valueCache: Any? = nil
+        masterDestination.log(
+            record: Record(level: .debug, domain: domain, file: file, line: line, function: function),
+            value: { valueCache ??= value() }
+        )
+    }
+    #else
+    public func debug(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+        var valueCache: Any? = nil
+        masterDestination.log(
+            record: Record(level: level, domain: domain, file: file, line: line, function: function),
+            value: { valueCache ??= value() }
+        )
+    }
+    #endif
 }

@@ -1,26 +1,21 @@
 import XCTest
 @testable import Gazooee
 @testable import GazooeeConfig
-//import func Gazooee.log
-
-class MockConsole: Destination {
-    var records: [(Record, String)] = []
-    #if swift(>=3.0)
-    func log(record: Record, value: @noescape () -> (Any)) {
-        records.append((record, "\(value())"))
-    }
-    #else
-    func log(record record: Record, @noescape value: () -> (Any)) {
-        records.append((record, "\(value())"))
-    }
-    #endif
-}
 
 class GazooeeTests: XCTestCase {
-    var defaultConsole = MockConsole()
+    var defaultDestination = RecordBuffer()
     var logger = Logger(domain: "test")
 
     func testDefaultLogs() {
+        logger.log(.debug, "this is debug")
+        logger.log(.info, "this is info")
+        logger.log(.warn, "this is warn")
+        logger.log(.error, "this is error")
+    }
+
+    // probably not on linux
+    func testConsole() {
+        masterDestination = Console()
         logger.log(.debug, "this is debug")
         logger.log(.info, "this is info")
         logger.log(.warn, "this is warn")
@@ -37,63 +32,52 @@ class GazooeeTests: XCTestCase {
     }
 
     func testNoFilter() {
-        masterDestination = defaultConsole
+        masterDestination = defaultDestination
         logger.log(.debug, "this is debug")
         logger.log(.info, "this is info")
         logger.log(.warn, "this is warn")
         logger.log(.error, "this is error")
-        XCTAssertEqual(4, defaultConsole.records.count)
-    }
-
-    func testNoLog() {
-        masterDestination = Filter({_ in false}, destination: defaultConsole)
-        logger.log(.debug, "this is debug")
-        logger.log(.info, "this is info")
-        logger.log(.warn, "this is warn")
-        logger.log(.error, "this is error")
-        XCTAssertEqual(0, defaultConsole.records.count)
-    }
-
-    func testWarnAndErrorLogs() {
-        masterDestination = Filter(above: .warn, destination: defaultConsole)
-        logger.log(.debug, "this is debug")
-        logger.log(.info, "this is info")
-        logger.log(.warn, "this is warn")
-        logger.log(.error, "this is error")
-        XCTAssertEqual(2, defaultConsole.records.count)
+        XCTAssertEqual(4, defaultDestination.records.count)
     }
 
     func testMulti() {
-        let secondConsole = MockConsole()
-        masterDestination = Multi([defaultConsole, secondConsole])
+        let secondConsole = RecordBuffer()
+        masterDestination = Multi([defaultDestination, secondConsole])
         logger.log(.debug, "this is debug")
         logger.log(.info, "this is info")
         logger.log(.warn, "this is warn")
         logger.log(.error, "this is error")
-        XCTAssertEqual(4, defaultConsole.records.count)
+        XCTAssertEqual(4, defaultDestination.records.count)
         XCTAssertEqual(4, secondConsole.records.count)
     }
 
     func testMultiAlso() {
-        let errorConsole = MockConsole()
+        let errorConsole = RecordBuffer()
         masterDestination = Multi([
-            defaultConsole,
+            defaultDestination,
             Filter(above: .warn, destination: errorConsole),
         ])
         logger.log(.debug, "this is debug")
         logger.log(.info, "this is info")
         logger.log(.warn, "this is warn")
         logger.log(.error, "this is error")
-        XCTAssertEqual(4, defaultConsole.records.count)
+        XCTAssertEqual(4, defaultDestination.records.count)
         XCTAssertEqual(2, errorConsole.records.count)
+    }
+
+    func testLogPerformance() {
+        masterDestination = VoidDestination()
+        measure {
+            for _ in 0..<1000 {
+                self.logger.log(.debug, "this is debug")
+            }
+        }
     }
 
     static var allTests : [(String, (GazooeeTests) -> () throws -> Void)] {
         return [
             ("testDefaultLogs", testDefaultLogs),
             ("testNoFilter", testNoFilter),
-            ("testNoLog", testNoLog),
-            ("testWarnAndErrorLogs", testWarnAndErrorLogs),
             ("testMulti", testMulti),
             ("testMultiAlso", testMultiAlso),
         ]
