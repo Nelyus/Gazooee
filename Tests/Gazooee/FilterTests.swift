@@ -12,7 +12,7 @@ import XCTest
 
 class FilterTests: XCTestCase {
     var defaultConsole = RecordBuffer()
-    var logger = Logger(domain: "FilterTests")
+    var logger = Logger(subsystem: "FilterTests")
 
     override func setUp() {
         super.setUp()

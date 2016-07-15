@@ -20,14 +20,14 @@ import Foundation
 
 public struct Record {
     public let level: Level
-    public let domain: String
+    public let subsystem: String
     public let file: String
     public let line: Int
     public let function: String
 
-    public init(level: Level, domain: String, file: String, line: Int, function: String) {
+    public init(level: Level, subsystem: String, file: String, line: Int, function: String) {
         self.level = level
-        self.domain = domain
+        self.subsystem = subsystem
         self.file = file
         self.line = line
         self.function = function

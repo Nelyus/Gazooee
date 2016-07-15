@@ -14,9 +14,9 @@ class OneLineFormatterTests: XCTestCase {
 
     func testOneLineFormatter() {
         let sut = OneLineFormatter()
-        let result = sut.format(record: Record(level: .debug, domain: "testsDomain", file: "file.swift", line: 42, function: "testFunction"), value: {"TheValue"})
+        let result = sut.format(record: Record(level: .debug, subsystem: "testsSubsystem", file: "file.swift", line: 42, function: "testFunction"), value: {"TheValue"})
         XCTAssertTrue(result.contains("debug"))
-        XCTAssertTrue(result.contains("testsDomain"))
+        XCTAssertTrue(result.contains("testsSubsystem"))
         XCTAssertTrue(result.contains("file.swift"))
         XCTAssertTrue(result.contains("42"))
         XCTAssertTrue(result.contains("testFunction"))

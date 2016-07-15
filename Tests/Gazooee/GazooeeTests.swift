@@ -4,7 +4,7 @@ import XCTest
 
 class GazooeeTests: XCTestCase {
     var defaultDestination = RecordBuffer()
-    var logger = Logger(domain: "test")
+    var logger = Logger(subsystem: "test")
 
     func testDefaultLogs() {
         logger.log(.debug, "this is debug")

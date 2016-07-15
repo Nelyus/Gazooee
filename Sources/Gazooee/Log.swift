@@ -50,16 +50,16 @@ func ??=<T>(inout rhs: T?, @autoclosure lhs: () -> (T)) -> T {
 //#endif
 
 public struct Logger {
-    let domain: String
-    public init(domain: String) {
-        self.domain = domain
+    let subsystem: String
+    public init(subsystem: String) {
+        self.subsystem = subsystem
     }
 
     #if swift(>=3.0)
     public func log(_ level: Level, _ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
-            record: Record(level: level, domain: domain, file: file, line: line, function: function),
+            record: Record(level: level, subsystem: subsystem, file: file, line: line, function: function),
             value: { valueCache ??= value() }
         )
     }
@@ -67,7 +67,7 @@ public struct Logger {
     public func log(level: Level, @autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
-            record: Record(level: level, domain: domain, file: file, line: line, function: function),
+            record: Record(level: level, subsystem: subsystem, file: file, line: line, function: function),
             value: { valueCache ??= value() }
         )
     }
@@ -77,7 +77,7 @@ public struct Logger {
     public func debug(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
-            record: Record(level: .debug, domain: domain, file: file, line: line, function: function),
+            record: Record(level: .debug, subsystem: subsystem, file: file, line: line, function: function),
             value: { valueCache ??= value() }
         )
     }
@@ -85,7 +85,7 @@ public struct Logger {
     public func debug(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
-            record: Record(level: level, domain: domain, file: file, line: line, function: function),
+            record: Record(level: level, subsystem: subsystem, file: file, line: line, function: function),
             value: { valueCache ??= value() }
         )
     }
