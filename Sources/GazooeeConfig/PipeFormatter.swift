@@ -9,6 +9,9 @@
 import Foundation
 
 public struct PipeFormatter: Formatter {
+    public init() {
+    }
+
     #if swift(>=3.0)
     public func format(record: Record, value: @noescape () -> (Any)) -> String {
         return "| \(record.level) - \(record.domain): \(record.file):\(record.line) - \(record.function)\n| \(value())"
