@@ -12,7 +12,7 @@ public struct Filter : Destination {
     let predicate: (Record) -> (Bool)
     let destination: Destination
 
-    public init(_ predicate: (Record) -> (Bool), destination: Destination) {
+    public init(_ predicate: @escaping (Record) -> (Bool), destination: Destination) {
         self.predicate = predicate
         self.destination = destination
     }
@@ -40,7 +40,7 @@ public struct Filter : Destination {
 
 public extension Destination {
     #if swift(>=3.0)
-    func filtered(_ predicate: (Record) -> (Bool)) -> Destination {
+    func filtered(_ predicate: @escaping (Record) -> (Bool)) -> Destination {
         return Filter(predicate, destination: self)
     }
     #else

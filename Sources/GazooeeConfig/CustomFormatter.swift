@@ -9,15 +9,15 @@
 import Foundation
 
 public struct CustomFormatter: Formatter {
-    private let _formatImpl: (record: Record, value: Any) -> String
+    private let _formatImpl: (Record, Any) -> String
 
-    public init(_ impl: (record: Record, value: Any) -> String) {
+    public init(_ impl: @escaping (Record, Any) -> String) {
         self._formatImpl = impl
     }
 
     #if swift(>=3.0)
     public func format(record: Record, value: @noescape () -> (Any)) -> String {
-        return _formatImpl(record: record, value: value())
+        return _formatImpl(record, value())
     }
     #else
     public func format(record record: Record, @noescape value: () -> (Any)) -> String {
