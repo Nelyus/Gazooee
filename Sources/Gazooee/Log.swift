@@ -9,7 +9,11 @@
 import Foundation
 import GazooeeConfig
 
+#if swift(>=3.0)
+infix operator ??= : AssignmentPrecedence
+#else
 infix operator ??= { assignment }
+#endif
 
 #if swift(>=3.0)
 func ??=<T>(rhs: inout T?, lhs: @autoclosure () -> (T)) -> T {

@@ -11,7 +11,7 @@ import GazooeeConfig
 
 struct VoidDestination: Destination {
     #if swift(>=3.0)
-    func log(record: Record, value: @noescape () -> (Any)) {
+    func log(record: Record, value: () -> (Any)) {
         // do nothing
     }
     #else
@@ -25,7 +25,7 @@ class RecordBuffer: Destination {
     var records: [(record: Record, value: Any)] = []
 
     #if swift(>=3.0)
-    func log(record: Record, value: @noescape () -> (Any)) {
+    func log(record: Record, value: () -> (Any)) {
         records.append(record: record, value: value())
     }
     #else

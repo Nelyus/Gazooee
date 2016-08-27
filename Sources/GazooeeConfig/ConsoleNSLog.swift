@@ -16,7 +16,7 @@ public struct ConsoleNSLog: Destination {
     }
 
     #if swift(>=3.0)
-    public func log(record: Record, value: @noescape () -> (Any)) {
+    public func log(record: Record, value: () -> (Any)) {
         NSLog(formatter.format(record: record, value: value))
     }
     #else

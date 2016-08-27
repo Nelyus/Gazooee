@@ -22,7 +22,7 @@ public struct Filter : Destination {
     }
 
     #if swift(>=3.0)
-    public func log(record: Record, value: @noescape () -> (Any)) {
+    public func log(record: Record, value: () -> (Any)) {
         guard predicate(record) else {
             return
         }

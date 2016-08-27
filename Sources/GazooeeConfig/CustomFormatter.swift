@@ -16,7 +16,7 @@ public struct CustomFormatter: Formatter {
     }
 
     #if swift(>=3.0)
-    public func format(record: Record, value: @noescape () -> (Any)) -> String {
+    public func format(record: Record, value: () -> (Any)) -> String {
         return _formatImpl(record, value())
     }
     #else
