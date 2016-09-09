@@ -11,17 +11,21 @@ import Foundation
 public struct CustomFormatter: Formatter {
     private let _formatImpl: (Record, Any) -> String
 
+    #if swift(>=3.0)
     public init(_ impl: @escaping (Record, Any) -> String) {
         self._formatImpl = impl
     }
 
-    #if swift(>=3.0)
     public func format(record: Record, value: () -> (Any)) -> String {
         return _formatImpl(record, value())
     }
     #else
+    public init(_ impl: (Record, Any) -> String) {
+        self._formatImpl = impl
+    }
+
     public func format(record record: Record, @noescape value: () -> (Any)) -> String {
-        return _formatImpl(record: record, value: value())
+        return _formatImpl(record, value())
     }
     #endif
 }

@@ -86,7 +86,7 @@ public struct Logger {
         )
     }
     #else
-    public func debug(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+    public func debug(@autoclosure value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
             record: Record(level: .debug, subsystem: subsystem, file: file, line: line, function: function),
@@ -104,7 +104,7 @@ public struct Logger {
         )
     }
     #else
-    public func info(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+    public func info(@autoclosure value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
             record: Record(level: .info, subsystem: subsystem, file: file, line: line, function: function),
@@ -122,7 +122,7 @@ public struct Logger {
         )
     }
     #else
-    public func warn(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+    public func warn(@autoclosure value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
             record: Record(level: .warn, subsystem: subsystem, file: file, line: line, function: function),
@@ -140,7 +140,7 @@ public struct Logger {
         )
     }
     #else
-    public func error(@autoclosure _ value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
+    public func error(@autoclosure value: () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
             record: Record(level: .error, subsystem: subsystem, file: file, line: line, function: function),

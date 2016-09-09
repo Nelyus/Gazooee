@@ -12,10 +12,17 @@ public struct Filter : Destination {
     let predicate: (Record) -> (Bool)
     let destination: Destination
 
+    #if swift(>=3.0)
     public init(_ predicate: @escaping (Record) -> (Bool), destination: Destination) {
         self.predicate = predicate
         self.destination = destination
     }
+    #else
+    public init(_ predicate: (Record) -> (Bool), destination: Destination) {
+        self.predicate = predicate
+        self.destination = destination
+    }
+    #endif
 
     public init(above minLevel: Level, destination: Destination) {
         self.init({ $0.level >= minLevel }, destination: destination)
