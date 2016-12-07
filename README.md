@@ -34,7 +34,7 @@ If you develop an App, you can configure how to manage logs, filtering with leve
 ```swift
 // main.swift
 import GazooeeConfig
-masterDestination = Filter({ $0.level >= .warn && $0.subsystem == "SampleApp" }, destination: ConsoleNSLog())
+masterDestination = Filter(above: .warn, destination: ConsoleNSLog())
 ```
 
 You can also define some custom `Destination` to take advantage of other logging systems (like, say, SwiftyBeaver)
