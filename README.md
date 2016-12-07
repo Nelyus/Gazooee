@@ -1,5 +1,6 @@
 # Gazooee
-a logging interface for swift
+
+A logging interface for swift
 
 ## Purpose
 
@@ -36,4 +37,18 @@ import GazooeeConfig
 masterDestination = Filter({ $0.level >= .warn && $0.subsystem == "SampleApp" }, destination: ConsoleNSLog())
 ```
 
-You can also define custome `Destination` to take advantage of other logging systems (like, say, SwiftyBeaver)
+You can also define some custom `Destination` to take advantage of other logging systems (like, say, SwiftyBeaver)
+
+## Samples
+
+See the sample targets in the project.
+
+## Installation
+
+### Swift Package Manager
+
+For [Swift Package Manager](https://github.com/apple/swift-package-manager) add the following package to your `Package.swift` file. Swift 3 is supported, Swift 2 should be but hasn't been tested recently.
+
+```swift
+.Package(url: "https://github.com/Nelyus/Gazooee.git", majorVersion: 0, minor: 3)
+```
