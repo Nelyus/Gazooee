@@ -47,8 +47,17 @@ See the sample targets in the project.
 
 ### Swift Package Manager
 
-For [Swift Package Manager](https://github.com/apple/swift-package-manager) add the following package to your `Package.swift` file. Swift 3 is supported, Swift 2 should be but hasn't been tested recently.
+For [Swift Package Manager](https://github.com/apple/swift-package-manager) add the following package to your `Package.swift` file:
 
 ```swift
 .Package(url: "https://github.com/Nelyus/Gazooee.git", majorVersion: 0, minor: 3)
+```
+
+For exemple:
+
+```swift
+let package = Package(
+    name: "MyPackage",
+    dependencies: [.Package(url: "https://github.com/Nelyus/Gazooee.git", majorVersion: 0, minor: 3)]
+)
 ```
