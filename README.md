@@ -1,6 +1,6 @@
 # Gazooee
 
-A logging interface for swift
+A Swifty logging interface
 
 ## Purpose
 
