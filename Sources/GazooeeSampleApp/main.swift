@@ -21,11 +21,11 @@ import GazooeeConfig
 // - we configure the destination
 //   we can use the subsystem name and other properties to filter / redirect logs
 // Because we're in the app we configure the outputs
-#if DEBUG
-masterDestination = ConsoleNSLog()
-#else
+//#if DEBUG
+//masterDestination = ConsoleNSLog()
+//#else
 masterDestination = Filter(above: .warn, destination: ConsoleNSLog())
-#endif
+//#endif
 
 import GazooeeSampleLib
 // we continue normal operations
@@ -42,3 +42,7 @@ print("Hello World")
 let sample = Sample(name: "Bar")
 try? sample.foo(true)
 try? sample.foo(false)
+
+func t(f: GazooeeConfig.Formatter) {
+    
+}

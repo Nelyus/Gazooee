@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A default implementation of Destination to `print` logs
 public struct Console: Destination {
     let formatter: Formatter
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A default implementation of Formatter
 public struct PipeFormatter: Formatter {
     public init() {
     }

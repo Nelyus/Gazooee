@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// An implementation of `Formatter` initialized with a closure
 public struct CustomFormatter: Formatter {
     private let _formatImpl: (Record, Any) -> String
 

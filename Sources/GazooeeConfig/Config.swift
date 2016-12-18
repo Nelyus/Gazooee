@@ -8,4 +8,8 @@
 
 import Foundation
 
+/// the root destination of all logs
+///
+/// see Multi to have several destinations
+/// - seealso: Multi, Destination
 public var masterDestination: Destination = Console()

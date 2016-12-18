@@ -35,13 +35,32 @@ func ??=<T>(inout rhs: T?, @autoclosure lhs: () -> (T)) -> T {
 }
 #endif
 
+/// The preferred way to record logs
+///
+/// Usage:
+/// ```
+///     //MyProject/Logger.swift
+///     let logger = Logger(subsystem: "MyProject")
+///     logger.debug("Hello World")
+/// ```
 public struct Logger {
     let subsystem: String
+    
+    /// Initializes a new Logger for the given `subsystem`
+    ///
+    /// - parameter subsystem: a name for the current subsystem
     public init(subsystem: String) {
         self.subsystem = subsystem
     }
 
     #if swift(>=3.0)
+    /// records `value` with the given level
+    ///
+    /// - parameter level: the log level
+    /// - parameter value: the data to log
+    /// - parameter file: the current file (defaults to #file)
+    /// - parameter line: the current line (defaults to #line)
+    /// - parameter function: the current function (defaults to #function)
     public func log(_ level: Level, _ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
@@ -60,6 +79,12 @@ public struct Logger {
     #endif
 
     #if swift(>=3.0)
+    /// records `value` with the level `debug`
+    ///
+    /// - parameter value: the data to log
+    /// - parameter file: the current file (defaults to #file)
+    /// - parameter line: the current line (defaults to #line)
+    /// - parameter function: the current function (defaults to #function)
     public func debug(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
@@ -77,7 +102,14 @@ public struct Logger {
     }
     #endif
 
+    ///
     #if swift(>=3.0)
+    /// records `value` with the level `info`
+    ///
+    /// - parameter value: the data to log
+    /// - parameter file: the current file (defaults to #file)
+    /// - parameter line: the current line (defaults to #line)
+    /// - parameter function: the current function (defaults to #function)
     public func info(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
@@ -96,6 +128,12 @@ public struct Logger {
     #endif
 
     #if swift(>=3.0)
+    /// records `value` with the level `warn`
+    ///
+    /// - parameter value: the data to log
+    /// - parameter file: the current file (defaults to #file)
+    /// - parameter line: the current line (defaults to #line)
+    /// - parameter function: the current function (defaults to #function)
     public func warn(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(
@@ -114,6 +152,12 @@ public struct Logger {
     #endif
 
     #if swift(>=3.0)
+    /// records `value` with the level `error`
+    ///
+    /// - parameter value: the data to log
+    /// - parameter file: the current file (defaults to #file)
+    /// - parameter line: the current line (defaults to #line)
+    /// - parameter function: the current function (defaults to #function)
     public func error(_ value: @autoclosure () -> (Any), _file file: String = #file, _line line: Int = #line, _function function: String = #function) {
         var valueCache: Any? = nil
         masterDestination.log(

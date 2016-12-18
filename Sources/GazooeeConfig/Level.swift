@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Levels of logging
 public enum Level: Int, Comparable {
     case debug, info, warn, error
 }
