@@ -10,7 +10,7 @@ import Foundation
 
 public class Sample {
     public var name: String
-    
+
     public enum Failure: Error {
         case bar
     }
@@ -19,7 +19,7 @@ public class Sample {
         logger.debug("will init Sample \(name)")
         self.name = name
     }
-    
+
     public func foo(_ flag: Bool) throws {
         guard false == flag else {
             logger.error("\(name): will fail")

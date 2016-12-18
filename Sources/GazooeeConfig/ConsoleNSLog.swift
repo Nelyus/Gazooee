@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A default implementation of `Destination` to `NSLog` logs
 public struct ConsoleNSLog: Destination {
     let formatter: Formatter
 

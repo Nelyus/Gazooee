@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// An implementation of destination allowing to log to several destinations
 public struct Multi: Destination {
     let destinations: [Destination]
 

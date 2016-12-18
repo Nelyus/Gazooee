@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// An implementation of Destination, which ignores records based on the result of its predicate
 public struct Filter : Destination {
     let predicate: (Record) -> (Bool)
     let destination: Destination

@@ -18,6 +18,12 @@ import Foundation
 //    }
 //}
 
+/**
+ Represents the metadata of a log record (not the value because a struct cannot be `@noescape` yet)
+
+ - seealso:
+ Multi
+ */
 public struct Record {
     public let level: Level
     public let subsystem: String

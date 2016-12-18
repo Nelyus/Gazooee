@@ -18,7 +18,7 @@ class LoggerTests: XCTestCase {
         masterDestination = buffer
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }

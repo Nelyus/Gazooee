@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A default implementation of Formatter
 public struct OneLineFormatter: Formatter {
     #if swift(>=3.0)
     public func format(record: Record, value: () -> (Any)) -> String {

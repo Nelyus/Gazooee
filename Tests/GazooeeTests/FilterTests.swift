@@ -11,14 +11,16 @@ import XCTest
 @testable import GazooeeConfig
 
 class FilterTests: XCTestCase {
-    var defaultConsole = RecordBuffer()
-    var logger = Logger(subsystem: "FilterTests")
+    var defaultConsole: RecordBuffer!
+    var logger: Logger!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        defaultConsole = RecordBuffer()
+        logger = Logger(subsystem: "FilterTests")
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -45,7 +47,7 @@ class FilterTests: XCTestCase {
     }
 
     func testPerformanceFilteredOut() {
-        let buffer = defaultConsole
+        let buffer = defaultConsole!
         masterDestination = Filter(above: .info, destination: buffer)
         measure {
             for _ in 0..<1000 {
@@ -56,7 +58,7 @@ class FilterTests: XCTestCase {
     }
 
     func testPerformanceFilteredIn() {
-        let buffer = defaultConsole
+        let buffer = defaultConsole!
         buffer.records.reserveCapacity(10000)
         masterDestination = Filter(above: .info, destination: buffer)
         measure {
