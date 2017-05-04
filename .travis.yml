@@ -7,6 +7,6 @@ branches:
 install:
   - swift package fetch
 script:
-  - swift build
+  - swift test
 notifications:
   email: false
