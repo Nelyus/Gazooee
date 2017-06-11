@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		OBJ_100 /* GazooeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* GazooeeTests.swift */; };
+		OBJ_101 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* LoggerTests.swift */; };
+		OBJ_102 /* OneLineFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* OneLineFormatterTests.swift */; };
+		OBJ_103 /* PipeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* PipeFormatterTests.swift */; };
+		OBJ_104 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* TestUtils.swift */; };
+		OBJ_106 /* GazooeeConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* GazooeeConfig.framework */; };
+		OBJ_107 /* Gazooee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Gazooee.framework */; };
+		OBJ_47 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Log.swift */; };
+		OBJ_49 /* GazooeeConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* GazooeeConfig.framework */; };
+		OBJ_56 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Config.swift */; };
+		OBJ_57 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Console.swift */; };
+		OBJ_58 /* ConsoleNSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* ConsoleNSLog.swift */; };
+		OBJ_59 /* CustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* CustomFormatter.swift */; };
+		OBJ_60 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Destination.swift */; };
+		OBJ_61 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Filter.swift */; };
+		OBJ_62 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Formatter.swift */; };
+		OBJ_63 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Level.swift */; };
+		OBJ_64 /* Multi.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Multi.swift */; };
+		OBJ_65 /* OneLineFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* OneLineFormatter.swift */; };
+		OBJ_66 /* PipeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* PipeFormatter.swift */; };
+		OBJ_67 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Record.swift */; };
+		OBJ_99 /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* FilterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A1296D81EBBAE6100367E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_51;
+			remoteInfo = GazooeeConfig;
+		};
+		8A1296DE1EBBAE6100367E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_51;
+			remoteInfo = GazooeeConfig;
+		};
+		8A1296DF1EBBAE6100367E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_42;
+			remoteInfo = Gazooee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		OBJ_11 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		OBJ_13 /* ConsoleNSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleNSLog.swift; sourceTree = "<group>"; };
+		OBJ_14 /* CustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormatter.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Multi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi.swift; sourceTree = "<group>"; };
+		OBJ_20 /* OneLineFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineFormatter.swift; sourceTree = "<group>"; };
+		OBJ_21 /* PipeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeFormatter.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		OBJ_30 /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
+		OBJ_31 /* GazooeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazooeeTests.swift; sourceTree = "<group>"; };
+		OBJ_32 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		OBJ_33 /* OneLineFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineFormatterTests.swift; sourceTree = "<group>"; };
+		OBJ_34 /* PipeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeFormatterTests.swift; sourceTree = "<group>"; };
+		OBJ_35 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Gazooee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Gazooee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_38 /* GazooeeConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GazooeeConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_41 /* GazooeeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = GazooeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_105 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_106 /* GazooeeConfig.framework in Frameworks */,
+				OBJ_107 /* Gazooee.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_49 /* GazooeeConfig.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* GazooeeConfig */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* Config.swift */,
+				OBJ_12 /* Console.swift */,
+				OBJ_13 /* ConsoleNSLog.swift */,
+				OBJ_14 /* CustomFormatter.swift */,
+				OBJ_15 /* Destination.swift */,
+				OBJ_16 /* Filter.swift */,
+				OBJ_17 /* Formatter.swift */,
+				OBJ_18 /* Level.swift */,
+				OBJ_19 /* Multi.swift */,
+				OBJ_20 /* OneLineFormatter.swift */,
+				OBJ_21 /* PipeFormatter.swift */,
+				OBJ_22 /* Record.swift */,
+			);
+			name = GazooeeConfig;
+			path = Sources/GazooeeConfig;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_28 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_29 /* GazooeeTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_29 /* GazooeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* FilterTests.swift */,
+				OBJ_31 /* GazooeeTests.swift */,
+				OBJ_32 /* LoggerTests.swift */,
+				OBJ_33 /* OneLineFormatterTests.swift */,
+				OBJ_34 /* PipeFormatterTests.swift */,
+				OBJ_35 /* TestUtils.swift */,
+			);
+			name = GazooeeTests;
+			path = Tests/GazooeeTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_37 /* Gazooee.framework */,
+				OBJ_38 /* GazooeeConfig.framework */,
+				OBJ_41 /* GazooeeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_28 /* Tests */,
+				OBJ_36 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Gazooee */,
+				OBJ_10 /* GazooeeConfig */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Gazooee */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Log.swift */,
+			);
+			name = Gazooee;
+			path = Sources/Gazooee;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		OBJ_42 /* Gazooee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "Gazooee" */;
+			buildPhases = (
+				OBJ_46 /* Sources */,
+				OBJ_48 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_50 /* PBXTargetDependency */,
+			);
+			name = Gazooee;
+			productName = Gazooee;
+			productReference = OBJ_37 /* Gazooee.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_51 /* GazooeeConfig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_52 /* Build configuration list for PBXNativeTarget "GazooeeConfig" */;
+			buildPhases = (
+				OBJ_55 /* Sources */,
+				OBJ_68 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GazooeeConfig;
+			productName = GazooeeConfig;
+			productReference = OBJ_38 /* GazooeeConfig.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_94 /* GazooeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_95 /* Build configuration list for PBXNativeTarget "GazooeeTests" */;
+			buildPhases = (
+				OBJ_98 /* Sources */,
+				OBJ_105 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_108 /* PBXTargetDependency */,
+				OBJ_109 /* PBXTargetDependency */,
+			);
+			name = GazooeeTests;
+			productName = GazooeeTests;
+			productReference = OBJ_41 /* GazooeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Gazooee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				OBJ_42 /* Gazooee */,
+				OBJ_51 /* GazooeeConfig */,
+				OBJ_94 /* GazooeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_47 /* Log.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_56 /* Config.swift in Sources */,
+				OBJ_57 /* Console.swift in Sources */,
+				OBJ_58 /* ConsoleNSLog.swift in Sources */,
+				OBJ_59 /* CustomFormatter.swift in Sources */,
+				OBJ_60 /* Destination.swift in Sources */,
+				OBJ_61 /* Filter.swift in Sources */,
+				OBJ_62 /* Formatter.swift in Sources */,
+				OBJ_63 /* Level.swift in Sources */,
+				OBJ_64 /* Multi.swift in Sources */,
+				OBJ_65 /* OneLineFormatter.swift in Sources */,
+				OBJ_66 /* PipeFormatter.swift in Sources */,
+				OBJ_67 /* Record.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_99 /* FilterTests.swift in Sources */,
+				OBJ_100 /* GazooeeTests.swift in Sources */,
+				OBJ_101 /* LoggerTests.swift in Sources */,
+				OBJ_102 /* OneLineFormatterTests.swift in Sources */,
+				OBJ_103 /* PipeFormatterTests.swift in Sources */,
+				OBJ_104 /* TestUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_108 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_51 /* GazooeeConfig */;
+			targetProxy = 8A1296DE1EBBAE6100367E55 /* PBXContainerItemProxy */;
+		};
+		OBJ_109 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_42 /* Gazooee */;
+			targetProxy = 8A1296DF1EBBAE6100367E55 /* PBXContainerItemProxy */;
+		};
+		OBJ_50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_51 /* GazooeeConfig */;
+			targetProxy = 8A1296D81EBBAE6100367E55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = NO;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				USE_HEADERMAP = NO;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/Gazooee_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Gazooee;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Gazooee;
+			};
+			name = Debug;
+		};
+		OBJ_45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/Gazooee_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Gazooee;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Gazooee;
+			};
+			name = Release;
+		};
+		OBJ_53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/GazooeeConfig_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = GazooeeConfig;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = GazooeeConfig;
+			};
+			name = Debug;
+		};
+		OBJ_54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/GazooeeConfig_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = GazooeeConfig;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = GazooeeConfig;
+			};
+			name = Release;
+		};
+		OBJ_96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/GazooeeTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = GazooeeTests;
+			};
+			name = Debug;
+		};
+		OBJ_97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Gazooee.xcodeproj/GazooeeTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = GazooeeTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "Gazooee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_43 /* Build configuration list for PBXNativeTarget "Gazooee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_44 /* Debug */,
+				OBJ_45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_52 /* Build configuration list for PBXNativeTarget "GazooeeConfig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_53 /* Debug */,
+				OBJ_54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_95 /* Build configuration list for PBXNativeTarget "GazooeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_96 /* Debug */,
+				OBJ_97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
