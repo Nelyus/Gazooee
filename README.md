@@ -1,3 +1,5 @@
+![Swift](https://github.com/Nelyus/Gazooee/workflows/Swift/badge.svg)
+
 # Gazooee
 
 A Swifty logging interface
